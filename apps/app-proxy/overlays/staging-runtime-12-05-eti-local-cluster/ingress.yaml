@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  name: staging-runtime-12-05-eti-local-cluster-cap-app-proxy
+  namespace: staging-runtime-12-05-eti-local-cluster
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: eti.pipeline-team.cf-cd.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: cap-app-proxy
+            port:
+              number: 3017
+        path: /app-proxy/
+        pathType: Prefix
+status:
+  loadBalancer: {}
