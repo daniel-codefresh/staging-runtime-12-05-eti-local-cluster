@@ -12,3 +12,7 @@ namespace: staging-runtime-12-05-eti-local-cluster
 resources:
 - ../../base
 - ingress.yaml
+images:
+  - name: quay.io/codefresh/cap-app-proxy
+    newName: quay.io/codefresh/cap-app-proxy
+    newTag: CR-11110
